@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&family=Kanit:wght@200;300;400;500;600&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* ใช้ Kanit เป็นหลัก แต่ปรับน้ำหนักพื้นฐานให้เบาลง (Light/Regular) */
+  font-family: 'Kanit', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  /* ลบ antialiased ออกถ้ามันทำให้ฟอนต์ดูหนาเกินไป หรือใช้ subpixel-antialiased แทน */
+  @apply subpixel-antialiased text-slate-700 bg-slate-100;
+}
+
+@theme {
+  --font-prompt: "Prompt", sans-serif;
+  --color-silver: #f5f5f5;
+
+  /* ตัวแปรสีหลัก */
+  --color-main-bg: #f5f5f5;
+  --color-card-bg: #ffffff;
+  --color-main-text: #000000;
+  --color-nav-text: #ffffff;
+  --color-border-line: #646a72;
+  /* สีเทาเข้มสำหรับโหมดสว่าง */
+}
+
+.dark {
+  --color-main-bg: #2e2d2d;
+  --color-card-bg: #1e1e1e;
+  --color-main-text: #ffffff;
+  --color-nav-text: #4b5563;
+  --color-border-line: #646a72;
+
+  /* สีเทาอ่อนสำหรับโหมดมืด */
+}
+
+@layer components {
+  .nav-link {
+    /* ใช้สีที่บอสตั้งไว้ */
+    color: var(--color-main-text);
+    /* เอา transition-colors ออกจาก @apply ถ้าจะคุม transform แยก */
+    @apply px-3 py-2 text-base font-bold tracking-[0.07em] relative;
+    /* ใส่ transition เฉพาะ color สำหรับตัวอักษร */
+    transition: color 0.3s ease-in-out;
+    display: inline-block;
+    /* สำคัญ: เพื่อให้ scaleX คำนวณระยะได้แม่นยำ */
+  }
+
+  .nav-link:hover {
+    @apply text-pink-500 dark:text-pink-400;
+  }
+}
+
+/* แยกส่วน Pseudo-element ออกมาให้ชัดเจน */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background-color: #ed2abc;
+
+  /* บังคับให้ transition เฉพาะ transform เพื่อความชัวร์ */
+  transition: transform 0.3s ease-in-out !important;
+
+  /* สถานะเริ่มต้น */
+  transform: scaleX(0);
+  transform-origin: right;
+
+  /* ป้องกันการโดน Navbar ทับ */
+  z-index: 10;
+}
+
+.nav-link:hover::after {
+  /* สถานะตอน Hover */
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@keyframes whiteShine {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-white-shine {
+  background: linear-gradient(90deg, #f423c0 0%, #ffffff55 50%, #eba1d4 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: whiteShine 10s linear infinite;
+}
