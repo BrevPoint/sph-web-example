@@ -51,7 +51,7 @@ export default function Nav() {
 
   return (
     // เพิ่ม font-sarabun เข้าไปที่นี่จุดเดียวครับบอส
-    <nav className="transition-colors duration-300 select-none shadow-sm font-sarabun">
+    <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md transition-colors duration-300 select-none shadow-sm font-sarabun">
       <div className="mx-auto max-w-full px-4 sm:px-6 lg:px-8 bg-white transition-colors duration-300">
         <div className="flex items-center justify-between py-3">
 
@@ -108,7 +108,7 @@ export default function Nav() {
       {open && (
         <div className="lg:hidden bg-white border-t border-gray-100 dark:border-gray-800 py-4 px-6 space-y-3 animate-in fade-in slide-in-from-top-2">
           {navItems.map((item) => (
-            <a key={item.name} href={item.href} className="block px-1 py-1 text-md nav-link relative font-bold transition-colors rounded-md">
+            <a key={item.name} href={item.href} className="block px-1 py-1 text-md nav-link relative font-bold transition-colors rounded-md text-main-text">
               {item.name}
             </a>
           ))}

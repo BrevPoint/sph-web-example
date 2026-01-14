@@ -64,13 +64,13 @@ export default function IntegratedDashboard() {
 
   return (
     <div className="w-full bg-slate-100 rounded-4xl ">
-      <div className="mx-auto bg-white rounded-4xl shadow-2xl border border-slate-200 overflow-hidden">
+      <div className="mx-auto bg-white rounded-4xl shadow-md border border-slate-200 overflow-hidden">
         
         {/* ✅ Header สีเข้มตามรูปภาพ */}
         <div className="p-4 bg-[#163970] text-white flex flex-col md:flex-row justify-between items-center border-b-4 border-blue-500">
           <div className="text-center md:text-left">
-            <h2 className="text-3xl font-black tracking-tight text-white mb-1">สถิติรวมบริการรายวัน</h2>
-            <p className="text-blue-400 text-sm font-bold">โรงพยาบาลสบปราบ | ระบบบริหารจัดการข้อมูล</p>
+            <h2 className="text-2xl font-black tracking-tight text-white mb-1">สถิติรวมบริการรายวัน</h2>
+            <p className="text-white-400 pl-5 text-sm font-bold">โรงพยาบาลสบปราบ | ระบบบริหารจัดการข้อมูล</p>
           </div>
           
           <div className="mt-4 md:mt-0 bg-white/10 p-1 rounded-2xl backdrop-blur-md border border-white/20 min-w-50 text-center">

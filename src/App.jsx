@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react' // เพิ่ม useState และ useEffect ที่นี่ครับ
+import { useState } from 'react' // เพิ่ม useState เพื่อคุม Modal จากส่วนกลาง
 import Nav from '../components/Nav.jsx'
 import Home from '../components/Home.jsx'
 import Services from '../components/Services.jsx'
@@ -7,71 +7,53 @@ import Jobs from '../components/Jobs.jsx'
 import Webportal from '../components/Webportal.jsx'
 import Footer from '../components/Footer.jsx'
 import Dashboard from '../components/Dashboard.jsx'
-// import Dashboard from './components/Dashboard.jsx' // บอสสามารถ import Dashboard มาใส่เพิ่มได้
 
 function App() {
-  // const [apiData, setApiData] = useState([]);
-  // const [loading, setLoading] = useState(true);
+  // สร้าง State กลางสำหรับเปิด/ปิด Modal ที่นี่
+  const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
 
-  // // ส่วนที่ 1: ดึงข้อมูล API (Logic)
-  // useEffect(() => {
-  //   const loadPatients = async () => {
-  //     try {
-  //       setLoading(true);
-  //       // เมื่อบอสมี API จริง ให้เปลี่ยน URL ตรงนี้ครับ
-  //       const response = await fetch('https://api.example.com/patients');
-  //       const data = await response.json();
-  //       setApiData(data);
-  //     } catch (error) {
-  //       console.error("API Error:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   loadPatients();
-  // }, []); // [] หมายถึงโหลดครั้งแรกครั้งเดียว
-
-  // ส่วนที่ 2: แสดงผลหน้าตาเว็บ (UI)
   return (
-    <div className="min-h-screen bg-(--color-main-bg) transition-colors duration-500 font-sarabun">
+    // 1. เพิ่ม group-modal เพื่อใช้คุมการเบลอทั้งหน้าถ้าต้องการ
+    <div className={`min-h-screen bg-(--color-main-bg) transition-all duration-500 font-sarabun ${isServiceModalOpen ? 'overflow-hidden' : ''}`}>
+      
       {/* ส่วนเมนูบนสุด */}
       <Nav />
 
-      <main className="container mx-auto px-6 max-w-screen-2xl py-6">
-        {/* ส่วน Hero / Welcome */}
+      {/* 2. ถ้า Modal เปิด ให้ใส่ Overlay หลอกๆ คลุมทั้งหน้าไว้ที่นี่ หรือส่ง Props ไปให้ Services */}
+      <main className={`container mx-auto px-6 max-w-screen-2xl py-6 transition-all duration-500 ${isServiceModalOpen ? 'blur-md scale-[0.98] pointer-events-none' : ''}`}>
         <Home />
-
-        <Dashboard />
-
-        {/* ส่วนบริการสำหรับประชาชน */}
-        <div className="mt-5">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-2 h-8 bg-blue-600 rounded-full shadow-[0_0_15px_rgba(37,99,235,0.4)]"></div>
-              <h2 className="text-2xl font-bold text-main-text">
-                บริการสำหรับประชาชน
-              </h2>
+        
+        <div className="w-full mx-auto px-4 py-8 bg-white rounded-4xl shadow-sm border border-slate-50">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <div className="lg:col-span-1">
+              <div className="top-10">
+                {/* 3. ส่ง State ไปให้ Services ใช้งาน */}
+                <Services 
+                  isGlobalModalOpen={isServiceModalOpen} 
+                  setIsGlobalModalOpen={setIsServiceModalOpen} 
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-3 space-y-6">
+              <Dashboard />
             </div>
           </div>
-          <Services />
         </div>
 
-        {/* ส่วนข่าวและงาน (แบ่ง Grid 2:1 ตามที่บอสต้องการ) */}
-        <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-4 gap-8 bg-white rounded-4xl shadow-sm border border-slate-50">
+          <div className="lg:col-span-3 p-5">
             <News />
           </div>
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 p-5">
             <Jobs />
           </div>
         </div>
 
-        {/* Webportal */}
-        <Webportal />
+        <div className="mt-5 bg-white rounded-4xl shadow-sm border border-slate-50">
+          <Webportal />
+        </div>
       </main>
 
-      {/* ส่วนท้ายเว็บ */}
       <Footer />
     </div>
   );

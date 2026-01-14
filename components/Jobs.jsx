@@ -9,10 +9,10 @@ export default function Jobs() {
     <section className="font-sarabun h-full">
       <div className="flex items-center gap-3 mb-4">
         <div className="w-1.5 h-6 bg-blue-600 rounded-full"></div>
-        <h2 className="text-2xl font-black text-main-text tracking-tight">ร่วมงานกับเรา</h2>
+        <h2 className="text-2xl font-black text-black tracking-tight">ร่วมงานกับเรา</h2>
       </div>
 
-      <div className="bg-white rounded-[2rem] p-5 border border-slate-100 shadow-xl shadow-slate-200/50 space-y-3">
+      <div className="bg-white rounded-4xl p-5 border border-slate-100 shadow-xl shadow-slate-200/50 space-y-3">
         {jobs.map((job, idx) => (
           <div key={idx} className="flex items-center justify-between p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 border border-transparent hover:border-blue-100 group cursor-pointer">
             <div className="space-y-1">

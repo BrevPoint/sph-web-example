@@ -29,74 +29,74 @@ export default function Services() {
   };
 
   return (
-    <section className="w-full py-6 px-2 font-sarabun">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5">
-        
-        {/* Main Online Consult - ปรับ Compact */}
+    <section className="w-full h-full p-1">
+      {/* - md:grid-cols-3 คือแนวนอนตอนจอปกติ 
+         - lg:grid-cols-1 คือแนวตั้งตอนอยู่ในช่อง Sidebar 3:1 
+         - h-full สั่งให้ Container สูงเต็มพื้นที่
+      */}
+      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-1 gap-4 h-full">
+
+        {/* Card 1: Consult */}
         <div
           onClick={() => setIsModalOpen(true)}
-          className="md:col-span-1 group relative overflow-hidden bg-white rounded-[1.5rem] p-6 shadow-lg shadow-slate-200/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-500 border border-white cursor-pointer flex flex-col justify-between"
+          className="flex-1 flex flex-col bg-white rounded-4xl p-6 shadow-md border border-slate-100 cursor-pointer hover:shadow-md transition-all group"
         >
-          <div className="relative z-10">
-            <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 text-[9px] font-black tracking-[0.15em] mb-3">
-              <span className="flex h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
-              STAFF ONLINE
-            </span>
-            <h3 className="text-xl font-black text-slate-900 leading-tight">
-              ปรึกษาเจ้าหน้าที่ <br/>
-              <span className="text-blue-600">ออนไลน์ 24 ชม.</span>
+          <div className="flex py-3 flex-col items-center flex-1 justify-center">
+            <span className="px-3 rounded-full bg-blue-50 text-blue-600 text-[9px] font-black tracking-[0.2em] mb-4 uppercase shadow-sm">Staff Online</span>
+            <h3 className="text-lg font-black text-slate-900 leading-tight text-center">
+              ปรึกษาเจ้าหน้าที่<br />
+              <span className="text-blue-600 text-xl">ออนไลน์ 24 ชม.</span>
             </h3>
           </div>
-          <div className="flex justify-between items-end mt-6">
-            <button className="bg-slate-900 text-white px-5 py-2 rounded-xl text-xs font-bold shadow-md shadow-slate-200 group-hover:scale-105 transition-transform">เริ่มแชท</button>
-            <div className="text-5xl group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500 drop-shadow-lg">🩺</div>
-          </div>
+          <button className="mt-6 bg-slate-900 text-white w-full py-3 rounded-2xl text-sm font-bold shadow-lg shadow-slate-200 group-hover:bg-blue-600 transition-colors">
+            เริ่มแชทเลย
+          </button>
         </div>
 
-        {/* Rights Card - ปรับ Compact */}
-        <div className="group bg-white rounded-[1.5rem] p-6 shadow-lg shadow-slate-200/50 hover:shadow-xl transition-all duration-500 border border-white flex flex-col justify-between cursor-pointer">
-          <div className="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">💳</div>
-          <div className="mt-4">
-            <h4 className="text-lg font-black text-slate-800 leading-none">สิทธิการรักษา</h4>
-            <p className="text-green-600 font-bold text-[9px] mt-1.5 tracking-wider uppercase">Check Rights</p>
+        {/* Card 2: Rights */}
+        <div className="flex-1 py-8 flex flex-col bg-white rounded-4xl p-6 shadow-md border border-slate-100 cursor-pointer hover:shadow-md transition-all group text-center">
+          <div className="flex flex-col items-center justify-center flex-1">
+            <div className="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform shadow-inner">💳</div>
+            <h4 className="text-lg font-black text-slate-800">สิทธิการรักษา</h4>
           </div>
+          <p className="mt-2 text-green-600 font-black text-[10px] tracking-widest uppercase py-2 bg-green-50/50 rounded-xl">Check Rights</p>
         </div>
 
-        {/* Complaint Card - ปรับ Compact */}
-        <div 
+        {/* Card 3: Complaint */}
+        <div
           onClick={() => handleSelectService({ title: "ร้องเรียน", isInHouse: true })}
-          className="group bg-white rounded-[1.5rem] p-6 shadow-lg shadow-slate-200/50 hover:shadow-xl transition-all duration-500 border border-white flex flex-col justify-between cursor-pointer"
+          className="flex-1 flex flex-col py-8 bg-white rounded-4xl p-6 shadow-md border border-slate-100 cursor-pointer hover:shadow-md transition-all group text-center"
         >
-          <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">📣</div>
-          <div className="mt-4">
-            <h4 className="text-lg font-black text-slate-800 leading-none">แจ้งเรื่องร้องเรียน</h4>
-            <p className="text-red-500 font-bold text-[9px] mt-1.5 tracking-wider uppercase">Help & Feedback</p>
+          <div className="flex flex-col items-center justify-center flex-1">
+            <div className="w-16 h-16 rounded-2xl bg-red-50 flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform shadow-inner">📣</div>
+            <h4 className="text-lg font-black text-slate-800">แจ้งเรื่องร้องเรียน</h4>
           </div>
+          <p className="mt-2 text-red-500 font-black text-[10px] tracking-widest uppercase py-2 bg-red-50/50 rounded-xl">Help & Feedback</p>
         </div>
       </div>
 
-      {/* --- Modal (Compact Premium) --- */}
+      {/* --- Modal & Chat Window (คงเดิม) --- */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-slate-900/30 backdrop-blur-sm">
-          <div className="bg-white w-full max-w-3xl rounded-[2rem] shadow-2xl overflow-hidden flex flex-col border border-white">
-            <div className="p-6 border-b border-slate-50 flex justify-between items-center">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+          <div className="bg-white w-full max-w-2xl rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col border border-white">
+            <div className="p-8 border-b border-slate-50 flex justify-between items-center bg-slate-50/30">
               <div>
-                <h2 className="text-xl font-black text-slate-800">เลือกแผนกรับบริการ</h2>
-                <p className="text-xs text-slate-400 mt-1">กรุณาเลือกแผนกที่ท่านต้องการปรึกษา</p>
+                <h2 className="text-2xl font-black text-slate-800 tracking-tight">เลือกแผนกรับบริการ</h2>
+                <p className="text-sm text-slate-400 mt-1">ยินดีให้บริการตลอด 24 ชั่วโมงครับ</p>
               </div>
-              <button onClick={() => setIsModalOpen(false)} className="w-10 h-10 rounded-full bg-slate-50 hover:bg-red-50 hover:text-red-500 transition-all flex items-center justify-center text-lg">✕</button>
+              <button onClick={() => setIsModalOpen(false)} className="w-12 h-12 rounded-full bg-white shadow-sm hover:bg-red-50 hover:text-red-500 transition-all flex items-center justify-center text-xl">✕</button>
             </div>
-            <div className="p-6 grid grid-cols-2 sm:grid-cols-5 gap-3 bg-slate-50/30 overflow-y-auto max-h-[60vh]">
+            <div className="p-8 grid grid-cols-2 sm:grid-cols-5 gap-4 bg-white overflow-y-auto max-h-[60vh]">
               {services.map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => handleSelectService(item)}
-                  className="group p-4 rounded-xl bg-white hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center gap-2 border border-transparent hover:border-blue-100"
+                  className="group p-4 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center gap-3 border border-transparent hover:border-blue-100"
                 >
-                  <div className={`w-12 h-12 ${item.light} rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition-transform`}>
+                  <div className={`w-14 h-14 ${item.light} rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 transition-transform shadow-sm`}>
                     {item.icon}
                   </div>
-                  <span className="font-bold text-slate-700 text-xs group-hover:text-blue-600 transition-colors">{item.title}</span>
+                  <span className="font-bold text-slate-700 text-sm group-hover:text-blue-600 transition-colors">{item.title}</span>
                 </button>
               ))}
             </div>
@@ -104,30 +104,34 @@ export default function Services() {
         </div>
       )}
 
-      {/* --- Chat Window (Compact Size) --- */}
       {activeChat && (
-        <div className={`fixed bottom-6 right-6 z-[1000] transition-all duration-500 ${isMinimized ? 'w-64' : 'w-[350px]'}`}>
-          <div className="bg-white rounded-[1.5rem] shadow-2xl overflow-hidden border border-white flex flex-col">
-            <div className="p-4 bg-white border-b border-slate-50 flex justify-between items-center">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-sm shadow-md shadow-blue-200">💬</div>
-                <div className="text-sm font-black text-slate-800">{activeChat}</div>
+        <div className={`fixed bottom-6 right-6 z-1000 transition-all duration-500 shadow-2xl ${isMinimized ? 'w-72' : 'w-95'}`}>
+          <div className="bg-white rounded-4xl overflow-hidden border border-slate-100 flex flex-col shadow-2xl">
+            <div className="p-5 bg-white border-b border-slate-50 flex justify-between items-center">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-lg shadow-lg shadow-blue-200">💬</div>
+                <div>
+                  <div className="text-xs font-black text-blue-600 uppercase tracking-widest">Chatting with</div>
+                  <div className="text-sm font-black text-slate-800">{activeChat}</div>
+                </div>
               </div>
-              <div className="flex gap-1">
-                <button onClick={() => setIsMinimized(!isMinimized)} className="w-7 h-7 hover:bg-slate-50 rounded-lg text-slate-400 font-bold">_</button>
-                <button onClick={() => setActiveChat(null)} className="w-7 h-7 hover:bg-red-50 hover:text-red-500 rounded-lg text-slate-400">✕</button>
+              <div className="flex gap-2">
+                <button onClick={() => setIsMinimized(!isMinimized)} className="w-8 h-8 hover:bg-slate-100 rounded-xl text-slate-400 font-bold transition-colors">_</button>
+                <button onClick={() => setActiveChat(null)} className="w-8 h-8 hover:bg-red-50 hover:text-red-500 rounded-xl text-slate-400 transition-colors">✕</button>
               </div>
             </div>
             {!isMinimized && (
               <>
-                <div className="h-[300px] p-5 bg-slate-50/50 overflow-y-auto flex flex-col gap-3">
-                   <div className="bg-white p-3.5 rounded-xl rounded-tl-none text-xs self-start shadow-sm border border-white text-slate-600 max-w-[90%] leading-relaxed">
-                      สวัสดีครับบอส ยินดีต้อนรับสู่แผนก <strong>{activeChat}</strong> ครับ ต้องการสอบถามข้อมูลพิมพ์ไว้ได้เลยครับ
-                   </div>
+                <div className="h-87.5 p-6 bg-slate-50/50 overflow-y-auto flex flex-col gap-4">
+                  <div className="bg-white p-4 rounded-2xl rounded-tl-none text-sm self-start shadow-sm border border-white text-slate-600 max-w-[85%] leading-relaxed">
+                    สวัสดีครับบอส ยินดีต้อนรับสู่แผนก <strong>{activeChat}</strong> ครับ ต้องการสอบถามข้อมูลด้านไหน พิมพ์ทิ้งไว้ได้เลยครับ ทีมงานกำลังเร่งเข้ามาตอบครับ
+                  </div>
                 </div>
-                <div className="p-3.5 bg-white border-t border-slate-50 flex gap-2">
-                  <input placeholder="พิมพ์ข้อความ..." className="flex-1 bg-slate-50 px-4 py-2.5 rounded-lg text-xs outline-none focus:ring-2 ring-blue-500/20 transition-all" />
-                  <button className="bg-blue-600 text-white px-4 py-2.5 rounded-lg text-xs font-black shadow-md shadow-blue-200 hover:bg-blue-700 transition-all">ส่ง</button>
+                <div className="p-4 bg-white border-t border-slate-50 flex gap-3 items-center">
+                  <input placeholder="พิมพ์ข้อความที่นี่..." className="flex-1 bg-slate-50 px-5 py-3 rounded-xl text-sm outline-none focus:ring-2 ring-blue-500/20 transition-all border border-transparent focus:border-blue-100" />
+                  <button className="bg-blue-600 text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-lg shadow-blue-100 hover:bg-blue-700 transition-all">
+                    <svg className="w-5 h-5 rotate-90" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                  </button>
                 </div>
               </>
             )}

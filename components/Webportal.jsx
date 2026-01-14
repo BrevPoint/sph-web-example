@@ -13,11 +13,12 @@ export default function Webportal() {
     ];
 
     return (
-        <section className="py-10 font-sarabun">
-            <div className="flex items-center gap-3 mb-8 px-2">
+        <section className="py-5 pl-5 pr-5">
+            <div className="flex items-center gap-3 mb-2 px-2">
                 <div className="w-1.5 h-6 bg-blue-500 rounded-full"></div>
-                <h2 className="text-2xl font-black text-main-text tracking-tight">MOPH <span className="text-blue-600">Web Portal</span></h2>
+                <h2 className="text-2xl font-black text-black tracking-tight">MOPH <span className="text-blue-600">Web Portal</span></h2>
             </div>
+            <hr className="w-full h-2 mb-2" />
 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-5">
                 {portals.map((item, idx) => (

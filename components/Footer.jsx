@@ -29,7 +29,7 @@ export default function Footer() {
           <div className="space-y-6">
             <div>
               <h2 className="text-3xl font-[800] text-blue-600 tracking-tighter mb-1">SOBPRAB</h2>
-              <h2 className="text-xl font-bold text-black leading-none uppercase tracking-widest opacity-80">Hospital</h2>
+              <h2 className="text-xl pl-10 font-bold text-black leading-none uppercase tracking-widest opacity-80">Hospital</h2>
             </div>
             <p className="text-black/70 leading-relaxed text-[15px] font-medium">
               โรงพยาบาลสบปราบ มุ่งมั่นให้บริการด้วยหัวใจ <br />
