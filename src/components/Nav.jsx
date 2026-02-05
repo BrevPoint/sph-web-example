@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import '../css/App.css'
-import '../css/index.css'
+import '../../css/App.css'
+import '../../css/index.css'
 
 export default function Nav() {
   const [open, setOpen] = useState(false)
