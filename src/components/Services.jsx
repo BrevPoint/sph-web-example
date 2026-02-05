@@ -184,7 +184,7 @@ export default function Services() {
           ) : (
             <div className="bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 flex flex-col shadow-[0_20px_50px_rgba(0,0,0,0.2)] animate-in slide-in-from-bottom-5 duration-300">
               {/* Header */}
-              <div className="p-5 bg-gradient-to-r from-blue-600 to-blue-500 text-white flex justify-between items-center shadow-lg">
+              <div className="p-5 bg-linear-to-r from-blue-600 to-blue-500 text-white flex justify-between items-center shadow-lg">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center text-2xl border border-white/30 shadow-inner">🏥</div>
                   <div><h3 className="font-black text-sm tracking-tight leading-none uppercase">ฝ่าย{activeChat}</h3></div>
@@ -196,7 +196,7 @@ export default function Services() {
               </div>
 
               {/* Chat Messages - ปรับทรงกล่องและขนาดฟอนต์ให้เหมือน Admin */}
-              <div className="h-[400px] p-6 bg-[#F8FAFC] overflow-y-auto flex flex-col gap-6">
+              <div className="h-100 p-6 bg-[#F8FAFC] overflow-y-auto flex flex-col gap-6">
                 {chatMessages.map((msg, i) => (
                   <div key={i} className={`flex flex-col ${msg.type === 'user' ? 'items-end' : 'items-start'}`}>
                     <div className={`px-5 py-3.5 shadow-sm max-w-[85%] leading-relaxed ${msg.type === 'user'

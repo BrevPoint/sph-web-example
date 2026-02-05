@@ -63,7 +63,7 @@ app.put('/api/chats/reply/:id', async (req, res) => {
         const { id } = req.params;
         const { admin_reply } = req.body;
         const sql = `UPDATE chat_logs SET admin_reply = ?, status = 'replied', replied_at = NOW(), is_read = 1 WHERE id = ?`;
-        const [result] = await db.query(sql, [admin_reply, id]);
+        const [_result] = await db.query(sql, [admin_reply, id]);
         res.status(200).json({ status: "success" });
     } catch (err) {
         res.status(500).json({ error: err.message });

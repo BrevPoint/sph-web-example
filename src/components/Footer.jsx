@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Column 1: Hospital Info */}
           <div className="space-y-6">
             <div>
-              <h2 className="text-3xl font-[800] text-blue-600 tracking-tighter mb-1">SOBPRAB</h2>
+              <h2 className="text-3xl font-extrabold text-blue-600 tracking-tighter mb-1">SOBPRAB</h2>
               <h2 className="text-xl pl-10 font-bold text-black leading-none uppercase tracking-widest opacity-80">Hospital</h2>
             </div>
             <p className="text-black/70 leading-relaxed text-[15px] font-medium">
@@ -50,7 +50,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links */}
           <div>
-            <h3 className="text-black font-[800] text-lg mb-6 flex items-center gap-2">
+            <h3 className="text-black font-extrabold text-lg mb-6 flex items-center gap-2">
               <span className="w-1.5 h-6 rounded-full bg-blue-500"></span>
               เมนูหลัก
             </h3>
@@ -58,7 +58,7 @@ export default function Footer() {
               {mainLinks.map((link) => (
                 <li key={link.name}>
                   <a href={link.href} className="text-[15px] text-black/80 hover:text-blue-600 transition-all flex items-center gap-2 group font-semibold">
-                    <span className="w-0 group-hover:w-3 h-[2px] bg-blue-500 transition-all"></span>
+                    <span className="w-0 group-hover:w-3 h-0.5 bg-blue-500 transition-all"></span>
                     {link.name}
                   </a>
                 </li>
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Column 3: Contact Details */}
           <div>
-            <h3 className="text-black font-[800] text-lg mb-6 flex items-center gap-2">
+            <h3 className="text-black font-extrabold text-lg mb-6 flex items-center gap-2">
               <span className="w-1.5 h-6 rounded-full bg-blue-500"></span>
               ติดต่อเรา
             </h3>
@@ -85,7 +85,7 @@ export default function Footer() {
                 <span className="text-xl animate-bounce">🚑</span>
                 <div>
                   <div className="text-[10px] font-black text-red-400 uppercase tracking-widest">Emergency Line</div>
-                  <span className="text-red-600 font-[800] italic text-lg leading-none">สายด่วน: {contactInfo.emergency}</span>
+                  <span className="text-red-600 font-extrabold italic text-lg leading-none">สายด่วน: {contactInfo.emergency}</span>
                 </div>
               </li>
             </ul>
@@ -93,11 +93,11 @@ export default function Footer() {
 
           {/* Column 4: Opening Hours */}
           <div>
-            <h3 className="text-black font-[800] text-lg mb-6 flex items-center gap-2">
+            <h3 className="text-black font-extrabold text-lg mb-6 flex items-center gap-2">
               <span className="w-1.5 h-6 rounded-full bg-blue-500"></span>
               เวลาทำการ
             </h3>
-            <div className="bg-white dark:bg-gray-800 backdrop-blur-sm p-6 rounded-[2rem] border border-gray-100 dark:border-gray-700 shadow-xl shadow-black/5 relative overflow-hidden group hover:border-blue-500/30 transition-all">
+            <div className="bg-white dark:bg-gray-800 backdrop-blur-sm p-6 rounded-4xl border border-gray-100 dark:border-gray-700 shadow-xl shadow-black/5 relative overflow-hidden group hover:border-blue-500/30 transition-all">
               <div className="relative z-10">
                 <div className="flex justify-between mb-4 pb-4 border-b border-gray-100 dark:border-gray-700">
                   <span className="text-white font-bold">แผนก OPD:</span>

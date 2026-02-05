@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react' 
+import { useState } from 'react'
 import Nav from './components/Nav.jsx'
 import Home from './components/Home.jsx'
 import Services from './components/Services.jsx'
@@ -13,13 +13,13 @@ import Adminlayout from './layouts/AdminLayout.jsx'
 
 function App() {
   const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
-  
+
   // 🚀 สถานะการสลับหน้า (Default เป็น false คือหน้าบ้าน)
   const [isAdminView, setIsAdminView] = useState(false);
 
   return (
     <div className={`min-h-screen bg-main-bg transition-all duration-500 font-sarabun ${isServiceModalOpen ? 'overflow-hidden' : ''}`}>
-      
+
       {/* 🔘 ปุ่มทางลัดลอยตัว (Admin Toggle Button) */}
       <button
         onClick={() => setIsAdminView(!isAdminView)}
@@ -30,7 +30,7 @@ function App() {
         ) : (
           <span className="text-2xl">⚙️</span> // ถ้าอยู่หน้าบ้าน จะโชว์ฟันเฟืองเพื่อเข้าหลังบ้าน
         )}
-        
+
         {/* Label เล็กๆ เวลาเอาเมาส์ไปชี้ */}
         <span className="absolute right-16 bg-slate-800 text-white text-xs px-3 py-1.5 rounded-xl opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity pointer-events-none">
           {isAdminView ? "กลับหน้าหลัก" : "เข้าหลังบ้าน"}
@@ -43,7 +43,7 @@ function App() {
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
             <h2 className="text-3xl font-black text-slate-800">แผงควบคุมหลัก</h2>
             <p className="text-slate-500 mt-2">ยินดีต้อนรับครับบอส ตอนนี้บอสอยู่ในระบบหลังบ้านแล้ว</p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               <div className="p-8 bg-white rounded-4xl border border-slate-100 shadow-sm">
                 <p className="text-sm font-bold text-slate-400 uppercase">แชทใหม่</p>
@@ -62,14 +62,14 @@ function App() {
           <Nav />
           <main className={`container mx-auto px-6 max-w-screen-2xl py-6 transition-all duration-500 ${isServiceModalOpen ? 'blur-md scale-[0.98] pointer-events-none' : ''}`}>
             <Home />
-            
+
             <div className="w-full mx-auto px-4 py-8 bg-white rounded-4xl shadow-sm border border-slate-50">
               <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                 <div className="lg:col-span-1">
                   <div className="top-10">
-                    <Services 
-                      isGlobalModalOpen={isServiceModalOpen} 
-                      setIsGlobalModalOpen={setIsServiceModalOpen} 
+                    <Services
+                      isGlobalModalOpen={isServiceModalOpen}
+                      setIsGlobalModalOpen={setIsServiceModalOpen}
                     />
                   </div>
                 </div>

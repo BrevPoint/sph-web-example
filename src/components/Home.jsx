@@ -3,10 +3,10 @@ import '../../css/index.css'
 
 export default function Home() {
   return (
-    <header className="relative bg-white rounded-[1.5rem] shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-slate-100 mb-6 transition-all font-sarabun overflow-hidden">
+    <header className="relative bg-white rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-slate-100 mb-6 transition-all font-sarabun overflow-hidden">
       
       {/* แถบสีตกแต่งด้านบนสุดเพื่อความภูมิฐาน */}
-      <div className="h-2 w-full bg-gradient-to-r from-blue-700 via-blue-500 to-emerald-500" />
+      <div className="h-2 w-full bg-linear-to-r from-blue-700 via-blue-500 to-emerald-500" />
 
       <div className="flex flex-col md:flex-row items-center">
         
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
 
         {/* ฝั่งขวา: รูปภาพหรือสัญลักษณ์ (เน้นความคลีนแบบ รพ.) */}
-        <div className="flex-1 relative w-full h-[300px] md:h-[500px] bg-slate-50 overflow-hidden">
+        <div className="flex-1 relative w-full h-75 md:h-125 bg-slate-50 overflow-hidden">
             {/* ตรงนี้บอสสามารถใส่รูปตึก รพ. หรือรูปคุณหมอได้ครับ */}
             <img 
               src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1000" 
@@ -48,8 +48,8 @@ export default function Home() {
               alt="Hospital background"
             />
             {/* Overlay ไล่เฉดสีเพื่อให้ภาพดูนุ่มนวล */}
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent hidden md:block" />
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent md:hidden" />
+            <div className="absolute inset-0 bg-linear-to-r from-white via-white/50 to-transparent hidden md:block" />
+            <div className="absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent md:hidden" />
         </div>
 
       </div>

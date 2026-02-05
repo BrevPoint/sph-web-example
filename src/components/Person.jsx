@@ -3,18 +3,18 @@ import '../../css/index.css'
 
 export default function Policy() {
   return (
-    <section className="w-full max-w-7xl mx-auto rounded-[1.5rem] md:rounded-[2.5rem] shadow-xl border border-gray-100  bg-main-bg overflow-hidden my-5">
-      <div className="flex flex-col lg:flex-row min-h-fit lg:min-h-[600px]">
+    <section className="w-full max-w-7xl mx-auto rounded-3xl md:rounded-[2.5rem] shadow-xl border border-gray-100  bg-main-bg overflow-hidden my-5">
+      <div className="flex flex-col lg:flex-row min-h-fit lg:min-h-150">
         
         {/* 1. ฝั่งรูปภาพ - บนมือถือให้ขึ้นก่อนและลดความสูงลงไม่ให้บังหน้าจอหมด */}
-        <div className="w-full lg:w-2/5 relative group h-[300px] md:h-[500px] lg:h-auto overflow-hidden bg-pink-100 order-1 lg:order-2">
+        <div className="w-full lg:w-2/5 relative group h-75 md:h-125 lg:h-auto overflow-hidden bg-pink-100 order-1 lg:order-2">
           {/* Overlay */}
           <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-10"></div>
           
           <img 
             src="/***/" 
             alt="ผู้อำนวยการโรงพยาบาล" 
-            className="w-full h-full object-cover object-top lg:object-center group-hover:scale-110 transition-transform duration-[2000ms]"
+            className="w-full h-full object-cover object-top lg:object-center group-hover:scale-110 transition-transform duration-2000"
           />
 
           {/* ป้ายชื่อ - ปรับขนาดตัวอักษรให้เล็กลงบนมือถือ */}
@@ -36,7 +36,7 @@ export default function Policy() {
           <div className="relative z-10 space-y-6 md:space-y-8 w-full">
             <div className="space-y-3 md:space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-[2px] bg-pink-500"></div>
+                <div className="w-8 h-0.5 bg-pink-500"></div>
                 <span className="text-pink-600 font-bold uppercase tracking-[0.2em] text-[10px] md:text-xs">Executive Policy</span>
               </div>
               <h2 className="text-2xl md:text-4xl lg:text-6xl font-black  leading-tight font-sarabun">
